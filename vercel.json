@@ -1,13 +1,1 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/nextjs",
-      "config": {
-        "target": "serverless"
-      }
-    }
-  ],
-  "framework": "nextjs"
-}
+{"framework":"nextjs"}
