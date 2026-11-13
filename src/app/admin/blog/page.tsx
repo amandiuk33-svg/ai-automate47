@@ -200,6 +200,7 @@ export default function AdminBlog() {
           <button onClick={handleLogout} className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors text-sm font-medium">
             Logout
           </button>
+          <button
             onClick={startNewPost}
             className="neon-button px-6 py-2 text-sm"
           >
