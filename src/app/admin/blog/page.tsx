@@ -47,23 +47,6 @@ export default function AdminBlog() {
     }
   }, []);
 
-  async function fetchPosts() {
-    try {
-      const res = await fetch('/api/admin/blog', {
-        headers: {
-          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`,
-        },
-      });
-      if (!res.ok) throw new Error('Failed to fetch posts');
-      const data = await res.json();
-      setPosts(data);
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     if (loginPassword === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
@@ -82,6 +65,23 @@ export default function AdminBlog() {
     setPosts([]);
     setEditing(null);
     setShowForm(false);
+  }
+
+  async function fetchPosts() {
+    try {
+      const res = await fetch('/api/admin/blog', {
+        headers: {
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`,
+        },
+      });
+      if (!res.ok) throw new Error('Failed to fetch posts');
+      const data = await res.json();
+      setPosts(data);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   }
 
   function startNewPost() {
