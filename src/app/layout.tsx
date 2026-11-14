@@ -68,6 +68,9 @@ export const metadata: Metadata = {
       url: '/assets/logo.svg',
     },
   ],
+  other: {
+    'google-site-verification': '_dQtoQYCuFZ1EzWe7a5-dNfkzNgLMYOaSH5EL4HZKsg',
+  },
 };
 
 export default function RootLayout({
