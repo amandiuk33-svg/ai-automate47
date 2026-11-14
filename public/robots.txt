@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aiautomate47.com/sitemap.xml
+Sitemap: https://aiautomate47.vercel.app/sitemap.xml
