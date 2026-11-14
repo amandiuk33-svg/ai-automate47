@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getPostBySlug } from '@/lib/markdown';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -96,8 +97,9 @@ function parseInlineMarkdown(text: string): JSX.Element {
   );
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
