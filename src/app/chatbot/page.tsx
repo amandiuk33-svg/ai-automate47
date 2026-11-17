@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'AI Chatbot | Ask About AI Automation & Consulting',
@@ -11,15 +12,16 @@ export const metadata: Metadata = {
   },
 };
 
+const config = getContent();
+const chatbot = config.chatbot;
+
 export default function ChatbotPage() {
   return (
     <div className="section-container">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">AI Chatbot - Ask About AI Automation for Small Business</h1>
-          <p className="text-xl text-white/60">
-            Ask me anything about AiAutomate47, our services, pricing, or how AI can help your small business.
-          </p>
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{chatbot.title}</h1>
+          <p className="text-xl text-white/60">{chatbot.subtitle}</p>
         </div>
 
         <div className="glass-card p-8 rounded-2xl">

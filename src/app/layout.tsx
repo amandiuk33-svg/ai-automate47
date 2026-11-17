@@ -4,38 +4,28 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ChatbotWidget } from '@/components/ChatbotWidget';
+import { getContent } from '@/lib/content';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+
+const config = getContent();
 
 export const metadata: Metadata = {
   title: {
     template: '%s | AiAutomate47',
-    default: 'AI Consultant for Small Business | AiAutomate47 - US AI Automation Agency',
+    default: config.meta.layout.title,
   },
-  description: 'AI consultancy and automation for US small businesses. Custom AI dashboards, workflow automation, social media management, and AI asset generation. Book your free AI consultation today.',
-  keywords: [
-    'AI consultancy',
-    'AI consultant',
-    'AI consultant for small business',
-    'AI automation small business',
-    'AI consultant USA',
-    'workflow automation',
-    'AI dashboard',
-    'social media management AI',
-    'AI asset generation',
-    'AI consultant pricing',
-    'AI consulting services',
-    'artificial intelligence consultant',
-  ],
-  authors: [{ name: 'AiAutomate47' }],
-  creator: 'AiAutomate47',
-  publisher: 'AiAutomate47',
+  description: config.meta.layout.description,
+  keywords: config.meta.layout.keywords,
+  authors: [{ name: config.site.name }],
+  creator: config.site.name,
+  publisher: config.site.name,
   robots: 'index, follow',
   openGraph: {
-    title: 'AI Consultant for Small Business | AiAutomate47',
-    description: 'AI consultancy and automation for US small businesses. Custom AI dashboards, workflow automation, social media management, and AI asset generation.',
+    title: config.meta.layout.title,
+    description: config.meta.layout.description,
     url: 'https://aiautomate47.com',
-    siteName: 'AiAutomate47',
+    siteName: config.site.name,
     locale: 'en_US',
     type: 'website',
     images: [
@@ -43,16 +33,16 @@ export const metadata: Metadata = {
         url: '/assets/logo.svg',
         width: 64,
         height: 64,
-        alt: 'AiAutomate47 Logo',
+        alt: `${config.site.name} Logo`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Consultant for Small Business | AiAutomate47',
-    description: 'AI consultancy and automation for US small businesses.',
+    title: config.meta.layout.title,
+    description: config.meta.layout.description,
     images: ['/assets/logo.svg'],
-    creator: '@aiautomate47',
+    creator: config.site.twitterHandle,
   },
   manifest: '/manifest.json',
   themeColor: '#00FFEF',
@@ -89,11 +79,11 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'ProfessionalService',
               '@id': 'https://aiautomate47.com#organization',
-              name: 'AiAutomate47',
-              alternateName: 'AiAutomate47 AI Consultancy',
-              description: 'AI consultancy and automation agency for US small businesses. Custom AI dashboards, workflow automation, social media management, and AI asset generation.',
+              name: config.site.name,
+              alternateName: `${config.site.name} AI Consultancy`,
+              description: config.meta.layout.description,
               url: 'https://aiautomate47.com',
-              telephone: '+1-800-AI-AUTO',
+              telephone: config.site.phone,
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'United States',

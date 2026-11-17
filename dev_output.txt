@@ -1,0 +1,31 @@
+
+> ai-automate47@1.0.0 dev
+> next dev
+
+⚠ Port 3000 is in use by process 8536, using available port 3001 instead.
+▲ Next.js 16.4.5 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.40.1:3001
+✓ Ready in 5.5s
+⚠ Invalid next.config.js options detected: 
+⚠     Expected object, received boolean at "experimental.serverActions"
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of d:\cline projects\portfolio website2\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * d:\cline projects\portfolio website2\ai-automate47\package-lock.json
+
+⚠ React 18 support is deprecated in Next.js 16 and will be removed in Next.js 17. Please upgrade to React 19. Learn more: https://nextjs.org/docs/messages/react-version
+✓ Running next.config.js took 105ms
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3000
+- PID:          8536
+- Dir:          d:\cline projects\portfolio website2\ai-automate47
+- Log:          .next\dev\logs\next-development.log
+
+You can access the existing server at http://localhost:3000,
+or run taskkill /PID 8536 /F to stop it and start a new one.
+[?25h

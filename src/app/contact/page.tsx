@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Contact AiAutomate47 | AI Consultation Booking',
@@ -12,26 +13,26 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
+  const config = getContent();
+
   return (
     <div className="section-container">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">Contact AiAutomate47 - AI Consultation Booking for US Small Business</h1>
-        <p className="text-xl text-white/60 max-w-2xl mx-auto">
-          Have questions about AI automation? Ready to transform your small business? We'd love to hear from you.
-        </p>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{config.contact.title}</h1>
+        <p className="text-xl text-white/60 max-w-2xl mx-auto">{config.contact.subtitle}</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-12">
         <div className="glass-card p-8">
-          <h3 className="text-2xl font-display font-bold text-white mb-6">Contact Information</h3>
+          <h3 className="text-2xl font-display font-bold text-white mb-6">{config.contact.heading}</h3>
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
               <div className="w-10 h-10 rounded-lg bg-neon-cyan/10 text-neon-cyan flex items-center justify-center">
                 📧
               </div>
               <div>
-                <h4 className="text-white font-medium">Email</h4>
-                <p className="text-white/60">hello@aiautomate47.com</p>
+                <h4 className="text-white font-medium">{config.contact.emailLabel}</h4>
+                <p className="text-white/60">{config.site.email}</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -39,8 +40,8 @@ export default function Contact() {
                 📞
               </div>
               <div>
-                <h4 className="text-white font-medium">Phone</h4>
-                <p className="text-white/60">(555) 123-4567</p>
+                <h4 className="text-white font-medium">{config.contact.phoneLabel}</h4>
+                <p className="text-white/60">{config.site.phone}</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -48,34 +49,34 @@ export default function Contact() {
                 📍
               </div>
               <div>
-                <h4 className="text-white font-medium">Location</h4>
-                <p className="text-white/60">Serving US Small Businesses Nationwide</p>
+                <h4 className="text-white font-medium">{config.contact.locationLabel}</h4>
+                <p className="text-white/60">{config.site.location}</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="glass-card p-8">
-          <h3 className="text-2xl font-display font-bold text-white mb-6">Send a Message</h3>
+          <h3 className="text-2xl font-display font-bold text-white mb-6">{config.contact.formHeading}</h3>
           <form className="space-y-4">
             <div>
-              <label className="block text-white/70 text-sm mb-2">Name</label>
+              <label className="block text-white/70 text-sm mb-2">{config.contact.namePlaceholder}</label>
               <input
                 type="text"
                 className="w-full bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-cyan"
-                placeholder="John Doe"
+                placeholder={config.contact.namePlaceholder}
               />
             </div>
             <div>
-              <label className="block text-white/70 text-sm mb-2">Email</label>
+              <label className="block text-white/70 text-sm mb-2">{config.contact.emailLabel}</label>
               <input
                 type="email"
                 className="w-full bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-cyan"
-                placeholder="john@business.com"
+                placeholder={config.contact.emailPlaceholder}
               />
             </div>
             <div>
-              <label className="block text-white/70 text-sm mb-2">Business Type</label>
+              <label className="block text-white/70 text-sm mb-2">{config.contact.businessTypeLabel}</label>
               <select className="w-full bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-cyan">
                 <option>Retail</option>
                 <option>Restaurant</option>
@@ -89,14 +90,14 @@ export default function Contact() {
               <textarea
                 rows={4}
                 className="w-full bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-cyan"
-                placeholder="Tell us about your business and how we can help..."
+                placeholder={config.contact.messagePlaceholder}
               ></textarea>
             </div>
             <button
               type="submit"
               className="neon-button w-full py-3"
             >
-              Send Message
+              {config.contact.submitLabel}
             </button>
           </form>
         </div>
@@ -109,14 +110,14 @@ export default function Contact() {
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
             '@id': 'https://aiautomate47.com/contact#business',
-            name: 'AiAutomate47',
+            name: config.site.name,
             image: 'https://aiautomate47.com/assets/logo.svg',
-            telephone: '(555) 123-4567',
-            email: 'hello@aiautomate47.com',
+            telephone: config.site.phone,
+            email: config.site.email,
             url: 'https://aiautomate47.com/contact',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'United States',
+              addressLocality: config.site.location,
               addressCountry: 'US',
             },
             areaServed: {

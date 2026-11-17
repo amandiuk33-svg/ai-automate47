@@ -1,0 +1,257 @@
+{
+  "site": {
+    "name": "AiAutomate47",
+    "tagline": "Empowering small businesses with AI-powered automation and custom dashboards.",
+    "email": "hello@aiautomate47.com",
+    "phone": "(555) 123-4567",
+    "location": "Serving US Small Businesses Nationwide",
+    "founded": "2026",
+    "twitterUrl": "https://twitter.com/aiautomate47",
+    "linkedinUrl": "https://linkedin.com/company/aiautomate47",
+    "twitterHandle": "@aiautomate47"
+  },
+  "home": {
+    "badge": "Custom AI Dashboards for Small Business",
+    "title": "Automate Your Business with AI",
+    "subtitle": "AiAutomate47 delivers custom AI-powered dashboards, end-to-end workflow automation, social media management, and AI asset generation for US small businesses. Turn ideas into revenue.",
+    "aiCards": ["🤖 AI Consulting", "⚡ Automation", "📱 Social Media", "🎨 Assets", "📊 Dashboard"],
+    "features": [
+      { "icon": "🤖", "text": "AI consultancy tailored for small business growth" },
+      { "icon": "⚡", "text": "Workflow automation that saves 20+ hours weekly" },
+      { "icon": "📱", "text": "Social media management on autopilot" },
+      { "icon": "🎨", "text": "AI asset generation — images, text & videos" }
+    ],
+    "faqs": [
+      { "question": "What does an AI consultant do for small businesses?", "answer": "An AI consultant helps small businesses identify AI opportunities, implement automation workflows, and train teams to use AI tools effectively for growth and efficiency." },
+      { "question": "How much does AI consulting cost for small business?", "answer": "AI consulting for small businesses typically ranges from $150-$300 per hour or $2,000-$10,000 per month depending on project scope and ongoing support needs." },
+      { "question": "What AI automation services do you offer?", "answer": "We offer AI workflow automation, custom AI dashboards, AI asset generation, social media management AI, and end-to-end AI implementation for US small businesses." },
+      { "question": "How long does AI implementation take?", "answer": "Most AI implementations for small businesses take 2-8 weeks depending on complexity, with initial automation workflows live within 2-4 weeks." },
+      { "question": "Do you serve businesses outside the USA?", "answer": "Our primary focus is US small businesses, but we can work with international clients on a case-by-case basis for AI consulting and automation projects." }
+    ]
+  },
+  "about": {
+    "subtitle": "Empowering US small businesses with cutting-edge AI automation and custom dashboards.",
+    "missionParagraphs": [
+      "We believe every small business deserves access to the same AI technology that powers Fortune 500 companies. AiAutomate47 was founded to bridge the gap between cutting-edge AI and Main Street America.",
+      "From automating repetitive workflows to generating marketing assets and building custom AI dashboards, we make advanced technology accessible, affordable, and easy to use."
+    ],
+    "checklist": [
+      "AI consultancy for small businesses",
+      "Custom AI-powered dashboards",
+      "Workflow automation & social media",
+      "Asset generation (images, text, video)"
+    ],
+    "founderYear": "2026",
+    "founderFocus": "US Small Business",
+    "founderSpecialty": "Custom AI Dashboards",
+    "faqs": [
+      { "question": "Who founded AiAutomate47 and what's the mission?", "answer": "AiAutomate47 was founded in 2026 to bridge the gap between cutting-edge AI technology and Main Street America. We believe every small business deserves access to the same AI technology that powers Fortune 500 companies." },
+      { "question": "What services does AiAutomate47 provide?", "answer": "We provide AI consultancy for small businesses, workflow automation, custom AI dashboards, social media management AI, asset generation, and end-to-end AI implementation." },
+      { "question": "Do you serve businesses outside the USA?", "answer": "Our primary focus is US small businesses, but we can work with international clients on a case-by-case basis for AI consulting and automation projects." }
+    ]
+  },
+  "services": {
+    "title": "AI Consulting & Automation Services for US Small Businesses",
+    "subtitle": "Expert AI Consultancy, Workflow Automation & AI Dashboards",
+    "description": "Everything your small business needs to automate, grow, and compete with the big players.",
+    "cards": [
+      {
+        "id": 1,
+        "title": "AI Consultancy",
+        "subtitle": "Expert guidance for your AI journey",
+        "description": "Strategic AI consulting tailored for small businesses. We help you identify opportunities, implement solutions, and train your team.",
+        "icon": "🤖",
+        "features": ["Strategy & roadmap", "AI readiness assessment", "Team training", "Implementation planning"],
+        "color": "text-neon-cyan border-neon-cyan/20 hover:bg-neon-cyan/10"
+      },
+      {
+        "id": 2,
+        "title": "Workflow Automation",
+        "subtitle": "Automate repetitive tasks",
+        "description": "Streamline your business operations with AI-powered workflow automation. Save time and reduce errors.",
+        "icon": "⚡",
+        "features": ["Process analysis", "Custom automation workflows", "Integration with existing tools", "Monitoring & optimization"],
+        "color": "text-neon-magenta border-neon-magenta/20 hover:bg-neon-magenta/10"
+      },
+      {
+        "id": 3,
+        "title": "Social Media Management",
+        "subtitle": "AI-powered social growth",
+        "description": "Automated social media content creation, scheduling, and engagement using advanced AI models.",
+        "icon": "📱",
+        "features": ["Content generation", "Post scheduling", "Engagement automation", "Analytics & reporting"],
+        "color": "text-neon-blue border-neon-blue/20 hover:bg-neon-blue/10"
+      },
+      {
+        "id": 4,
+        "title": "Asset Generation",
+        "subtitle": "Images, text & videos",
+        "description": "Generate professional images, compelling copy, and short-form videos using cutting-edge AI tools.",
+        "icon": "🎨",
+        "features": ["AI image generation", "Copywriting", "Short-form video creation", "Brand asset library"],
+        "color": "text-neon-cyan border-neon-cyan/20 hover:bg-neon-cyan/10"
+      },
+      {
+        "id": 5,
+        "title": "Custom AI Dashboard",
+        "subtitle": "Your AI command center",
+        "description": "A complete, custom AI-powered dashboard built specifically for your business needs.",
+        "icon": "📊",
+        "features": ["Real-time analytics", "Custom widgets", "AI assistant integration", "Data visualization"],
+        "color": "text-neon-magenta border-neon-magenta/20 hover:bg-neon-magenta/10"
+      }
+    ],
+    "faqs": [
+      { "question": "What AI services do you offer for small businesses?", "answer": "We offer AI consultancy, workflow automation, custom AI dashboards, AI asset generation, and social media management AI specifically designed for US small businesses." },
+      { "question": "How much do AI consulting services cost?", "answer": "AI consulting services typically range from $150-$300 per hour or $2,000-$10,000 per month depending on project scope and ongoing support needs." },
+      { "question": "How long does AI implementation take?", "answer": "Most AI implementations for small businesses take 2-8 weeks depending on complexity, with initial automation workflows live within 2-4 weeks." }
+    ]
+  },
+  "pricing": {
+    "title": "AI Consultant Pricing for Small Business",
+    "subtitle": "Transparent AI Automation Plans & Packages",
+    "description": "Choose the plan that fits your small business. All plans include a custom AI dashboard.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$499",
+        "period": "/month",
+        "description": "Perfect for small businesses just starting with AI automation",
+        "features": ["AI Consultation (2 hours/month)", "Basic workflow automation (3 workflows)", "Social media management (2 platforms)", "Email support"],
+        "cta": "Get Started",
+        "popular": false
+      },
+      {
+        "name": "Growth",
+        "price": "$899",
+        "period": "/month",
+        "description": "For growing businesses that need more automation power",
+        "features": ["AI Consultation (5 hours/month)", "Advanced workflow automation (10 workflows)", "Social media management (4 platforms)", "Custom AI dashboard", "Priority email support"],
+        "cta": "Choose Plan",
+        "popular": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "$1,499",
+        "period": "/month",
+        "description": "Full AI automation suite for established small businesses",
+        "features": ["AI Consultation (10 hours/month)", "Unlimited workflow automation", "Social media management (6 platforms)", "Custom AI dashboard + API access", "24/7 priority support", "Dedicated account manager"],
+        "cta": "Contact Sales",
+        "popular": false
+      }
+    ],
+    "faqs": [
+      { "question": "How much does AI consulting cost per hour?", "answer": "AI consulting rates typically range from $150-$300 per hour depending on the consultant's experience and project complexity." },
+      { "question": "What is the monthly cost for AI automation services?", "answer": "Monthly AI automation packages start at $499/month for Starter plans and go up to $1,499/month for Enterprise plans with unlimited automation." },
+      { "question": "Are there setup fees for AI implementation?", "answer": "Some custom implementations may have one-time setup fees ranging from $500-$2,000 depending on complexity. All monthly plans include setup at no extra cost." }
+    ]
+  },
+  "caseStudies": {
+    "title": "AI Automation Case Studies for US Small Business",
+    "subtitle": "Real Results from AI Implementation",
+    "description": "Real results for real small businesses. See how AiAutomate47 helps US companies grow with AI.",
+    "faqs": [
+      { "question": "Which industries have benefited most from AI automation?", "answer": "Our case studies show strong results across multiple sectors: restaurants increased orders 300%, law firms cut document review time 90%, and e-commerce stores reduced support tickets 70%." },
+      { "question": "What AI services were implemented in these case studies?", "answer": "Services included AI workflow automation, custom AI dashboards, AI-powered social media management, and AI chatbot implementation tailored to each industry's needs." }
+    ],
+    "studies": [
+      {
+        "id": 1,
+        "title": "Local Bakery Increases Orders by 300%",
+        "clientName": "Sweet Success Bakery",
+        "industry": "Food & Beverage",
+        "challenge": "Manual order taking and social media management was consuming 20+ hours per week.",
+        "solution": "Implemented automated order system with AI-powered social media content generation.",
+        "results": "300% increase in online orders, 15 hours saved per week, 50% reduction in errors."
+      },
+      {
+        "id": 2,
+        "title": "Law Firm Automates Document Review",
+        "clientName": "Johnson & Associates",
+        "industry": "Legal Services",
+        "challenge": "Contract review taking days, causing client delays and missed opportunities.",
+        "solution": "Custom AI document analysis dashboard with Claude integration for instant contract summaries.",
+        "results": "90% faster document review, 40% more clients served, $15K monthly savings."
+      },
+      {
+        "id": 3,
+        "title": "E-commerce Store Scales Customer Support",
+        "clientName": "TechGadgets Pro",
+        "industry": "E-commerce",
+        "challenge": "Customer support tickets piling up, 48+ hour response times.",
+        "solution": "AI-powered chatbot and automated email response system integrated with existing helpdesk.",
+        "results": "70% reduction in support tickets, 2-hour average response time, 4.8/5 customer satisfaction."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact AiAutomate47 - AI Consultation Booking for US Small Business",
+    "subtitle": "Have questions about AI automation? Ready to transform your small business? We'd love to hear from you.",
+    "heading": "Contact Information",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "formHeading": "Send a Message",
+    "namePlaceholder": "John Doe",
+    "emailPlaceholder": "john@business.com",
+    "businessTypeLabel": "Business Type",
+    "messagePlaceholder": "Tell us about your business and how we can help...",
+    "submitLabel": "Send Message"
+  },
+  "chatbot": {
+    "title": "AI Chatbot - Ask About AI Automation for Small Business",
+    "subtitle": "Ask me anything about AiAutomate47, our services, pricing, or how AI can help your small business.",
+    "greeting": "Hello! I'm the AiAutomate47 AI assistant. Ask me about our services, pricing, or how we can help your small business with AI automation.",
+    "defaultResponse": "I'd be happy to help! Could you rephrase your question? You can also visit our contact page for direct assistance.",
+    "faqs": {
+      "services": "We offer AI consultancy, workflow automation, social media management, asset generation (images, text, videos), and custom AI-powered dashboards for small businesses.",
+      "pricing": "Our pricing starts at $499/month for small businesses. We offer custom packages based on your specific needs.",
+      "small business": "Yes! AiAutomate47 specializes in helping US small businesses leverage AI to grow and automate their operations.",
+      "book": "You can book a free consultation through our pricing page or contact us directly. We typically respond within 24 hours.",
+      "claude": "Claude is an AI assistant from Anthropic that excels at reasoning, writing, and analysis. We help integrate Claude into your business workflows."
+    }
+  },
+  "dashboard": {
+    "title": "Custom AI Dashboard Preview for Small Business",
+    "subtitle": "See what your custom AI-powered dashboard looks like. Real-time metrics, automation controls, and intelligent insights.",
+    "widgets": [
+      { "title": "Automated Tasks", "value": "1,247", "change": "+12%", "trend": "up", "icon": "⚡" },
+      { "title": "Revenue Saved", "value": "$8,450", "change": "+24%", "trend": "up", "icon": "💰" },
+      { "title": "Social Posts", "value": "89", "change": "-5%", "trend": "down", "icon": "📱" },
+      { "title": "AI Queries", "value": "3,102", "change": "+45%", "trend": "up", "icon": "🤖" }
+    ],
+    "recentActivity": [
+      { "time": "2 min ago", "action": "Social post published", "detail": "Instagram - Summer Sale Campaign", "status": "success" },
+      { "time": "15 min ago", "action": "Workflow triggered", "detail": "Invoice processing - Client #402", "status": "success" },
+      { "time": "1 hour ago", "action": "Image generated", "detail": "Product banner - Q3 Campaign", "status": "pending" },
+      { "time": "3 hours ago", "action": "Report delivered", "detail": "Weekly analytics - Email sent", "status": "success" }
+    ],
+    "ctaText": "Want this dashboard for your business?",
+    "ctaLabel": "Request Custom Dashboard"
+  },
+  "valueProp": {
+    "title": "Why US Small Businesses Choose AiAutomate47",
+    "subtitle": "AiAutomate47 is built specifically for US small businesses who want to leverage AI without the enterprise price tag.",
+    "ctaText": "Join hundreds of small businesses automating with AI.",
+    "ctaLabel": "Start Your Free Consultation",
+    "benefits": [
+      { "title": "Built for US Small Business", "description": "We understand the unique challenges American small businesses face. Our solutions are affordable, scalable, and designed for teams of 1-50 employees.", "icon": "🇺🇸" },
+      { "title": "Complete AI Dashboard", "description": "Get your own custom AI-powered dashboard that centralizes all your automation, analytics, and AI tools in one place.", "icon": "📊" },
+      { "title": "No Technical Expertise Needed", "description": "We handle the setup, training, and ongoing support. You focus on running your business while we handle the AI.", "icon": "🤝" },
+      { "title": "Faster Than Traditional Agencies", "description": "AI-powered development means we build and deploy solutions in days, not months. Start seeing ROI immediately.", "icon": "⚡" },
+      { "title": "Affordable Monthly Pricing", "description": "No massive upfront costs. Our subscription model makes AI automation accessible for any small business budget.", "icon": "💰" },
+      { "title": "Ongoing Support & Updates", "description": "Your AI dashboard evolves with your business. We continuously update and optimize your automations.", "icon": "🔄" }
+    ]
+  },
+  "meta": {
+    "home": { "title": "AI Consultant for Small Business | AiAutomate47 - US AI Automation Agency", "description": "AiAutomate47 delivers AI consultancy, workflow automation, social media management, and AI asset generation for US small businesses. Book your free AI consultation today.", "keywords": ["AI consultant for small business", "AI consultancy USA", "AI automation small business", "workflow automation AI", "custom AI dashboard", "AI consultant pricing"] },
+    "about": { "title": "About AiAutomate47 | AI Automation Agency for US Small Business", "description": "AiAutomate47 is a one-person AI automation agency helping US small businesses leverage artificial intelligence. Custom AI dashboards, workflow automation, and AI consultancy.", "keywords": ["AI automation agency", "AI consultant USA", "one person AI agency", "AI consultancy small business"] },
+    "services": { "title": "AI Consulting Services USA | AI Automation for Small Business", "description": "Expert AI consulting and automation services for US small businesses. AI consultancy, workflow automation, AI dashboards, AI asset generation, and social media management AI. Get a quote today.", "keywords": ["AI consulting services USA", "AI consultant agency", "AI automation agency", "AI dashboard development", "AI workflow automation", "AI consultant pricing"] },
+    "pricing": { "title": "AI Consulting Pricing | Affordable AI Automation Plans", "description": "Transparent AI consulting pricing for US small businesses. Starter $499/mo, Growth $899/mo, Enterprise $1,499/mo. All plans include custom AI dashboard.", "keywords": ["AI consulting pricing", "AI automation cost", "AI dashboard pricing", "AI consultant rates"] },
+    "caseStudies": { "title": "AI Automation Case Studies | Small Business Success Stories", "description": "Real AI automation case studies for US small businesses. See how AiAutomate47 helped clients increase revenue, save time, and automate workflows with custom AI dashboards.", "keywords": ["AI automation case studies", "AI small business success", "AI consultancy results", "AI dashboard case study"] },
+    "chatbot": { "title": "AI Chatbot | Ask About AI Automation & Consulting", "description": "Chat with the AiAutomate47 AI assistant about AI consultancy, automation services, pricing, and how AI can help your US small business.", "keywords": ["AI chatbot", "AI assistant consultation", "AI automation FAQ", "AI consulting chatbot"] },
+    "dashboard": { "title": "AI Dashboard Preview | Custom AI-Powered Dashboard Demo", "description": "Preview your custom AI-powered dashboard from AiAutomate47. Real-time metrics, automation controls, and intelligent insights for US small businesses.", "keywords": ["AI dashboard demo", "custom AI dashboard", "AI dashboard preview", "AI automation dashboard"] },
+    "contact": { "title": "Contact AiAutomate47 | AI Consultation Booking", "description": "Contact AiAutomate47 for AI consultancy and automation services. Book a free consultation for your US small business. Custom AI dashboards and workflow automation.", "keywords": ["AI consultant contact", "AI automation consultation", "book AI consultation", "AI consulting services USA"] },
+    "layout": { "title": "AI Consultant for Small Business | AiAutomate47 - US AI Automation Agency", "description": "AI consultancy and automation for US small businesses. Custom AI dashboards, workflow automation, social media management, and AI asset generation. Book your free AI consultation today.", "keywords": ["AI consultancy", "AI consultant", "AI consultant for small business", "AI automation small business", "AI consultant USA", "workflow automation", "AI dashboard", "social media management AI", "AI asset generation", "AI consultant pricing", "AI consulting services", "artificial intelligence consultant"] }
+  }
+}

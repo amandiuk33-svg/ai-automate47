@@ -1,28 +1,13 @@
 'use client';
 
+import { useState } from 'react';
+import { getContent } from '@/lib/content';
+
 export function Hero() {
-  const faqs = [
-    {
-      q: 'What does an AI consultant do for small businesses?',
-      a: 'An AI consultant helps small businesses identify AI opportunities, implement automation workflows, and train teams to use AI tools effectively for growth and efficiency.',
-    },
-    {
-      q: 'How much does AI consulting cost for small business?',
-      a: 'AI consulting for small businesses typically ranges from $150-$300 per hour or $2,000-$10,000 per month depending on project scope and ongoing support needs.',
-    },
-    {
-      q: 'What AI automation services do you offer?',
-      a: 'We offer AI workflow automation, custom AI dashboards, AI asset generation, social media management AI, and end-to-end AI implementation for US small businesses.',
-    },
-    {
-      q: 'How long does AI implementation take?',
-      a: 'Most AI implementations for small businesses take 2-8 weeks depending on complexity, with initial automation workflows live within 2-4 weeks.',
-    },
-    {
-      q: 'Do you serve businesses outside the USA?',
-      a: 'Our primary focus is US small businesses, but we can work with international clients on a case-by-case basis for AI consulting and automation projects.',
-    },
-  ];
+  const config = getContent();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const faqs = config.home.faqs;
 
   return (
     <>
@@ -41,10 +26,10 @@ export function Hero() {
         <div className="lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 border border-neon-cyan/20 rounded-full text-neon-cyan text-sm font-medium mb-8 animate-fade-in ai-hologram">
             <span className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse" />
-            Custom AI Dashboards for Small Business
+            {config.home.badge}
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-8 animate-fade-in delay-100 text-balance ai-glitch" data-text="Automate Your Business with AI">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-8 animate-fade-in delay-100 text-balance ai-glitch" data-text={config.home.title}>
             Automate Your <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-blue">
               Business with AI
@@ -52,7 +37,7 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/70 mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in delay-200 leading-relaxed">
-            AiAutomate47 delivers custom AI-powered dashboards, end-to-end workflow automation, social media management, and AI asset generation for US small businesses. Turn ideas into revenue.
+            {config.home.subtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in delay-300">
@@ -69,7 +54,7 @@ export function Hero() {
             <div className="relative bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl ai-hologram relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-cyan to-transparent animate-pulse" />
               <div className="flex flex-wrap gap-4 justify-center mb-8">
-                {['🤖 AI Consulting', '⚡ Automation', '📱 Social Media', '🎨 Assets', '📊 Dashboard'].map((item, i) => (
+                {config.home.aiCards.map((item: string, i: number) => (
                   <div key={i} className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 group relative overflow-hidden ${
                     i % 2 === 0
                       ? 'bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20 hover:bg-neon-cyan/20'
@@ -81,12 +66,7 @@ export function Hero() {
                 ))}
               </div>
               <div className="space-y-4">
-                {[
-                  { icon: '🤖', text: 'AI consultancy tailored for small business growth' },
-                  { icon: '⚡', text: 'Workflow automation that saves 20+ hours weekly' },
-                  { icon: '📱', text: 'Social media management on autopilot' },
-                  { icon: '🎨', text: 'AI asset generation — images, text & videos' },
-                ].map((item, i) => (
+                {config.home.features.map((item: any, i: number) => (
                   <div key={i} className="flex items-center space-x-3 py-2 border-b border-white/5 last:border-0 ai-float">
                     <div className="w-2 h-2 rounded-full bg-neon-cyan/20 text-neon-cyan flex items-center justify-center text-xs animate-pulse">
                       {item.icon}
@@ -114,9 +94,9 @@ export function Hero() {
             <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-neon-cyan/30 transition-all duration-300">
               <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
                 <span className="text-neon-cyan">Q{i + 1}</span>
-                {faq.q}
+                {faq.question}
               </h3>
-              <p className="text-white/70 leading-relaxed">{faq.a}</p>
+              <p className="text-white/70 leading-relaxed">{faq.answer}</p>
             </div>
           ))}
         </div>

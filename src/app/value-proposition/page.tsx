@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Why US Small Businesses Choose AiAutomate47 | AI Automation Value',
@@ -11,47 +12,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ValueProposition() {
-  const benefits = [
-    {
-      title: 'Built for US Small Business',
-      description: 'We understand the unique challenges American small businesses face. Our solutions are affordable, scalable, and designed for teams of 1-50 employees.',
-      icon: '🇺🇸',
-    },
-    {
-      title: 'Complete AI Dashboard',
-      description: 'Get your own custom AI-powered dashboard that centralizes all your automation, analytics, and AI tools in one place.',
-      icon: '📊',
-    },
-    {
-      title: 'No Technical Expertise Needed',
-      description: 'We handle the setup, training, and ongoing support. You focus on running your business while we handle the AI.',
-      icon: '🤝',
-    },
-    {
-      title: 'Faster Than Traditional Agencies',
-      description: 'AI-powered development means we build and deploy solutions in days, not months. Start seeing ROI immediately.',
-      icon: '⚡',
-    },
-    {
-      title: 'Affordable Monthly Pricing',
-      description: 'No massive upfront costs. Our subscription model makes AI automation accessible for any small business budget.',
-      icon: '💰',
-    },
-    {
-      title: 'Ongoing Support & Updates',
-      description: 'Your AI dashboard evolves with your business. We continuously update and optimize your automations.',
-      icon: '🔄',
-    },
-  ];
+const config = getContent();
+const valueProp = config.valueProp;
 
+export default function ValueProposition() {
   return (
     <div className="section-container bg-space-950/50 rounded-2xl border border-white/10">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">Why US Small Businesses Choose AiAutomate47</h1>
-        <p className="text-xl text-white/60 max-w-2xl mx-auto">
-          AiAutomate47 is built specifically for US small businesses who want to leverage AI without the enterprise price tag.
-        </p>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{valueProp.title}</h1>
+        <p className="text-xl text-white/60 max-w-2xl mx-auto">{valueProp.subtitle}</p>
       </div>
 
       {/* Organization Schema */}
@@ -67,7 +36,7 @@ export default function ValueProposition() {
       </script>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {benefits.map((benefit, i) => (
+        {valueProp.benefits.map((benefit, i) => (
           <div key={i} className="glass-card p-8 text-center hover:border-neon-cyan/50 transition-all duration-300 group">
             <div className="w-14 h-14 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 bg-white/5 border border-white/10 group-hover:bg-neon-cyan/20 transition-colors">
               {benefit.icon}
@@ -79,9 +48,9 @@ export default function ValueProposition() {
       </div>
 
       <div className="mt-16 text-center">
-        <p className="text-white/70 text-lg mb-8">Join hundreds of small businesses automating with AI.</p>
+        <p className="text-white/70 text-lg mb-8">{valueProp.ctaText}</p>
         <a href="/pricing" className="neon-button px-8 py-4 text-lg">
-          Start Your Free Consultation
+          {valueProp.ctaLabel}
         </a>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'AI Automation Case Studies | Small Business Success Stories',
@@ -11,48 +12,16 @@ export const metadata: Metadata = {
   },
 };
 
-const caseStudies = [
-  {
-    id: 1,
-    title: 'Local Bakery Increases Orders by 300%',
-    clientName: 'Sweet Success Bakery',
-    industry: 'Food & Beverage',
-    challenge: 'Manual order taking and social media management was consuming 20+ hours per week.',
-    solution: 'Implemented automated order system with AI-powered social media content generation.',
-    results: '300% increase in online orders, 15 hours saved per week, 50% reduction in errors.',
-    image: null,
-  },
-  {
-    id: 2,
-    title: 'Law Firm Automates Document Review',
-    clientName: 'Johnson & Associates',
-    industry: 'Legal Services',
-    challenge: 'Contract review taking days, causing client delays and missed opportunities.',
-    solution: 'Custom AI document analysis dashboard with Claude integration for instant contract summaries.',
-    results: '90% faster document review, 40% more clients served, $15K monthly savings.',
-    image: null,
-  },
-  {
-    id: 3,
-    title: 'E-commerce Store Scales Customer Support',
-    clientName: 'TechGadgets Pro',
-    industry: 'E-commerce',
-    challenge: 'Customer support tickets piling up, 48+ hour response times.',
-    solution: 'AI-powered chatbot and automated email response system integrated with existing helpdesk.',
-    results: '70% reduction in support tickets, 2-hour average response time, 4.8/5 customer satisfaction.',
-    image: null,
-  },
-];
+const config = getContent();
+const caseStudies = config.caseStudies;
 
 export default function CaseStudies() {
   return (
     <div className="section-container">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">AI Automation Case Studies for US Small Business</h1>
-        <h2 className="text-2xl md:text-3xl font-display font-semibold text-neon-cyan mb-8">Real Results from AI Implementation</h2>
-        <p className="text-xl text-white/60 max-w-2xl mx-auto">
-          Real results for real small businesses. See how AiAutomate47 helps US companies grow with AI.
-        </p>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{caseStudies.title}</h1>
+        <h2 className="text-2xl md:text-3xl font-display font-semibold text-neon-cyan mb-8">{caseStudies.subtitle}</h2>
+        <p className="text-xl text-white/60 max-w-2xl mx-auto">{caseStudies.description}</p>
       </div>
 
       {/* FAQ Section */}
@@ -97,7 +66,7 @@ export default function CaseStudies() {
       </script>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {caseStudies.map((study) => (
+        {caseStudies.studies.map((study) => (
           <div key={study.id} className="glass-card p-8 hover:border-neon-cyan/50 transition-all duration-300">
             <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl bg-neon-cyan/10 text-neon-cyan mb-6">
               📈
@@ -132,3 +101,5 @@ export default function CaseStudies() {
     </div>
   );
 }
+
+

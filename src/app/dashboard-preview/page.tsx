@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'AI Dashboard Preview | Custom AI-Powered Dashboard Demo',
@@ -11,28 +12,15 @@ export const metadata: Metadata = {
   },
 };
 
+const config = getContent();
+const dashboard = config.dashboard;
+
 export default function DashboardPreview() {
-  const widgets = [
-    { title: 'Automated Tasks', value: '1,247', change: '+12%', trend: 'up', icon: '⚡' },
-    { title: 'Revenue Saved', value: '$8,450', change: '+24%', trend: 'up', icon: '💰' },
-    { title: 'Social Posts', value: '89', change: '-5%', trend: 'down', icon: '📱' },
-    { title: 'AI Queries', value: '3,102', change: '+45%', trend: 'up', icon: '🤖' },
-  ];
-
-  const recentActivity = [
-    { time: '2 min ago', action: 'Social post published', detail: 'Instagram - Summer Sale Campaign', status: 'success' },
-    { time: '15 min ago', action: 'Workflow triggered', detail: 'Invoice processing - Client #402', status: 'success' },
-    { time: '1 hour ago', action: 'Image generated', detail: 'Product banner - Q3 Campaign', status: 'pending' },
-    { time: '3 hours ago', action: 'Report delivered', detail: 'Weekly analytics - Email sent', status: 'success' },
-  ];
-
   return (
     <div className="section-container">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">Custom AI Dashboard Preview for Small Business</h1>
-        <p className="text-xl text-white/60 max-w-2xl mx-auto">
-          See what your custom AI-powered dashboard looks like. Real-time metrics, automation controls, and intelligent insights.
-        </p>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{dashboard.title}</h1>
+        <p className="text-xl text-white/60 max-w-2xl mx-auto">{dashboard.subtitle}</p>
       </div>
 
       {/* WebSite Schema */}
@@ -51,7 +39,7 @@ export default function DashboardPreview() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-        {widgets.map((widget) => (
+        {dashboard.widgets.map((widget) => (
           <div key={widget.title} className="glass-card p-6">
             <div className="flex justify-between items-start mb-4">
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-2xl ${
@@ -80,7 +68,7 @@ export default function DashboardPreview() {
         <div className="glass-card p-6">
           <h3 className="text-xl font-display font-bold text-white mb-6">Recent Activity</h3>
           <div className="space-y-4">
-            {recentActivity.map((activity, i) => (
+            {dashboard.recentActivity.map((activity, i) => (
               <div key={i} className="flex items-start space-x-3 py-3 border-b border-white/5 last:border-0">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${
                   activity.status === 'success' ? 'bg-neon-cyan/20 text-neon-cyan' : 'bg-neon-magenta/20 text-neon-magenta'
@@ -99,9 +87,9 @@ export default function DashboardPreview() {
       </div>
 
       <div className="mt-16 text-center">
-        <p className="text-white/70 mb-6">Want this dashboard for your business?</p>
+        <p className="text-white/70 mb-6">{dashboard.ctaText}</p>
         <a href="/pricing" className="neon-button">
-          Request Custom Dashboard
+          {dashboard.ctaLabel}
         </a>
       </div>
     </div>

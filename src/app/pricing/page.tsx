@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { getContent } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'AI Consulting Pricing | Affordable AI Automation Plans',
@@ -12,67 +13,20 @@ export const metadata: Metadata = {
   },
 };
 
-const pricingPlans = [
-  {
-    name: 'Starter',
-    price: '$499',
-    period: '/month',
-    description: 'Perfect for small businesses just starting with AI automation',
-    features: [
-      'AI Consultation (2 hours/month)',
-      'Basic workflow automation (3 workflows)',
-      'Social media management (2 platforms)',
-      'Email support',
-    ],
-    cta: 'Get Started',
-    popular: false,
-  },
-  {
-    name: 'Growth',
-    price: '$899',
-    period: '/month',
-    description: 'For growing businesses that need more automation power',
-    features: [
-      'AI Consultation (5 hours/month)',
-      'Advanced workflow automation (10 workflows)',
-      'Social media management (4 platforms)',
-      'Custom AI dashboard',
-      'Priority email support',
-    ],
-    cta: 'Choose Plan',
-    popular: true,
-  },
-  {
-    name: 'Enterprise',
-    price: '$1,499',
-    period: '/month',
-    description: 'Full AI automation suite for established small businesses',
-    features: [
-      'AI Consultation (10 hours/month)',
-      'Unlimited workflow automation',
-      'Social media management (6 platforms)',
-      'Custom AI dashboard + API access',
-      '24/7 priority support',
-      'Dedicated account manager',
-    ],
-    cta: 'Contact Sales',
-    popular: false,
-  },
-];
+const config = getContent();
+const pricing = config.pricing;
 
 export default function Pricing() {
   return (
     <div className="section-container">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">AI Consultant Pricing for Small Business</h1>
-        <h2 className="text-2xl md:text-3xl font-display font-semibold text-neon-cyan mb-8">Transparent AI Automation Plans & Packages</h2>
-        <p className="text-xl text-white/60 max-w-2xl mx-auto">
-          Choose the plan that fits your small business. All plans include a custom AI dashboard.
-        </p>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{pricing.title}</h1>
+        <h2 className="text-2xl md:text-3xl font-display font-semibold text-neon-cyan mb-8">{pricing.subtitle}</h2>
+        <p className="text-xl text-white/60 max-w-2xl mx-auto">{pricing.description}</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {pricingPlans.map((plan) => (
+        {pricing.plans.map((plan) => (
           <div
             key={plan.name}
             className={`glass-card p-8 rounded-2xl relative ${
@@ -130,33 +84,15 @@ export default function Pricing() {
           </div>
 
           <div className="space-y-4">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-neon-cyan/30 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
-                <span className="text-neon-cyan">Q1</span>
-                How much does AI consulting cost per hour?
-              </h3>
-              <p className="text-white/70 leading-relaxed">
-                AI consulting rates typically range from $150-$300 per hour depending on the consultant's experience and project complexity.
-              </p>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-neon-cyan/30 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
-                <span className="text-neon-cyan">Q2</span>
-                What is the monthly cost for AI automation services?
-              </h3>
-              <p className="text-white/70 leading-relaxed">
-                Monthly AI automation packages start at $499/month for Starter plans and go up to $1,499/month for Enterprise plans with unlimited automation.
-              </p>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-neon-cyan/30 transition-all duration-300">
-              <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
-                <span className="text-neon-cyan">Q3</span>
-                Are there setup fees for AI implementation?
-              </h3>
-              <p className="text-white/70 leading-relaxed">
-                Some custom implementations may have one-time setup fees ranging from $500-$2,000 depending on complexity. All monthly plans include setup at no extra cost.
-              </p>
-            </div>
+            {pricing.faqs.map((faq: any, i: number) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-neon-cyan/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
+                  <span className="text-neon-cyan">Q{i + 1}</span>
+                  {faq.question}
+                </h3>
+                <p className="text-white/70 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -168,32 +104,14 @@ export default function Pricing() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            mainEntity: [
-              {
-                '@type': 'Question',
-                name: 'How much does AI consulting cost per hour?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'AI consulting rates typically range from $150-$300 per hour depending on the consultant\'s experience and project complexity.',
-                },
+            mainEntity: pricing.faqs.map((faq: any) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
               },
-              {
-                '@type': 'Question',
-                name: 'What is the monthly cost for AI automation services?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Monthly AI automation packages start at $499/month for Starter plans and go up to $1,499/month for Enterprise plans with unlimited automation.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'Are there setup fees for AI implementation?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Some custom implementations may have one-time setup fees ranging from $500-$2,000 depending on complexity. All monthly plans include setup at no extra cost.',
-                },
-              },
-            ],
+            })),
           }),
         }}
       />
