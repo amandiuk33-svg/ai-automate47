@@ -8,7 +8,30 @@ import { getContent } from '@/lib/content';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-const config = getContent();
+let config: any;
+try {
+  config = getContent();
+} catch {
+  config = {
+    site: {
+      name: 'AiAutomate47',
+      tagline: 'Empowering small businesses with AI-powered automation.',
+      email: 'hello@aiautomate47.com',
+      phone: '(555) 123-4567',
+      location: 'US',
+      twitterUrl: 'https://twitter.com/aiautomate47',
+      linkedinUrl: 'https://linkedin.com/company/aiautomate47',
+      twitterHandle: '@aiautomate47',
+    },
+    meta: {
+      layout: {
+        title: 'AI Consultant for Small Business | AiAutomate47',
+        description: 'AI consultancy and automation for US small businesses.',
+        keywords: ['AI consultancy', 'AI consultant', 'AI automation small business'],
+      },
+    },
+  };
+}
 
 export const metadata: Metadata = {
   title: {
