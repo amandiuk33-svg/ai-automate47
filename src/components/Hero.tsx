@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { getContent } from '@/lib/content';
+import { getContent } from '@/lib/content-read';
 
 export function Hero() {
   const config = getContent();
