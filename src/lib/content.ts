@@ -1,5 +1,8 @@
-import fs from 'fs';
-import path from 'path';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const fs = require('fs');
+const path = require('path');
 
 const configPath = path.join(process.cwd(), 'src', 'content', 'site-config.json');
 
