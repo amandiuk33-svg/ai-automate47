@@ -1,6 +1,4 @@
-import path from 'path';
-
-const configPath = path.join(process.cwd(), 'src', 'content', 'site-config.json');
+import siteConfig from '@/content/site-config.json';
 
 export interface SiteConfig {
   site: {
@@ -131,13 +129,13 @@ export interface SiteConfig {
 }
 
 export async function getContent(): Promise<SiteConfig> {
-  const fs = await import('fs');
-  const fileContents = await fs.promises.readFile(configPath, 'utf8');
-  return JSON.parse(fileContents) as SiteConfig;
+  return siteConfig as SiteConfig;
 }
 
 export async function saveContent(data: SiteConfig): Promise<void> {
   const fs = await import('fs');
+  const path = await import('path');
+  const configPath = path.join(process.cwd(), 'src', 'content', 'site-config.ts');
   const jsonContent = JSON.stringify(data, null, 2);
   await fs.promises.writeFile(configPath, jsonContent, 'utf8');
 }
