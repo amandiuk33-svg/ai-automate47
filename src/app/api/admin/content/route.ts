@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { getContent } from '@/lib/content-read';
-import { saveContent } from '@/lib/content';
 
 function verifyAuth(request: Request): NextResponse | null {
   const authHeader = request.headers.get('authorization');
@@ -40,7 +39,11 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json();
-    await saveContent(body);
+    const fs = await import('fs');
+    const path = await import('path');
+    const configPath = path.join(process.cwd(), 'src', 'content', 'site-config.json');
+    const jsonContent = JSON.stringify(body, null, 2);
+    await fs.promises.writeFile(configPath, jsonContent, 'utf8');
     return NextResponse.json({ success: true });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
