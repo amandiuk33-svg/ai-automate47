@@ -12,10 +12,9 @@ export const metadata: Metadata = {
   },
 };
 
-const config = getContent();
-const caseStudies = config.caseStudies;
-
-export default function CaseStudies() {
+export default async function CaseStudies() {
+  const config = await getContent();
+  const caseStudies = config.caseStudies;
   return (
     <div className="section-container">
       <div className="text-center mb-16">

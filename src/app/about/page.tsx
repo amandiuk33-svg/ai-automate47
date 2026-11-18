@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function About() {
-  const config = getContent();
+export default async function About() {
+  const config = await getContent();
   return (
     <div className="section-container">
       <div className="text-center mb-16">

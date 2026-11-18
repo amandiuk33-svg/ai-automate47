@@ -13,10 +13,9 @@ export const metadata: Metadata = {
   },
 };
 
-const config = getContent();
-const services = config.services.cards;
-
-export default function Services() {
+export default async function Services() {
+  const config = await getContent();
+  const services = config.services.cards;
   return (
     <div className="section-container">
       <div className="text-center mb-16">

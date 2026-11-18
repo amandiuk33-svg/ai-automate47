@@ -1,8 +1,4 @@
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-const fs = require('fs');
-const path = require('path');
+import path from 'path';
 
 const configPath = path.join(process.cwd(), 'src', 'content', 'site-config.json');
 
@@ -134,15 +130,14 @@ export interface SiteConfig {
   meta: Record<string, { title: string; description: string; keywords: string[] }>;
 }
 
-export function getContent(): SiteConfig {
-  if (!fs.existsSync(configPath)) {
-    throw new Error('Site config not found');
-  }
-  const fileContents = fs.readFileSync(configPath, 'utf8');
+export async function getContent(): Promise<SiteConfig> {
+  const fs = await import('fs');
+  const fileContents = await fs.promises.readFile(configPath, 'utf8');
   return JSON.parse(fileContents) as SiteConfig;
 }
 
-export function saveContent(data: SiteConfig): void {
+export async function saveContent(data: SiteConfig): Promise<void> {
+  const fs = await import('fs');
   const jsonContent = JSON.stringify(data, null, 2);
-  fs.writeFileSync(configPath, jsonContent, 'utf8');
+  await fs.promises.writeFile(configPath, jsonContent, 'utf8');
 }

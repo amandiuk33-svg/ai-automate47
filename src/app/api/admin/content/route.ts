@@ -26,7 +26,7 @@ export async function GET(request: Request) {
   if (authError) return authError;
 
   try {
-    const content = getContent();
+    const content = await getContent();
     return NextResponse.json(content);
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -39,7 +39,7 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json();
-    saveContent(body);
+    await saveContent(body);
     return NextResponse.json({ success: true });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });

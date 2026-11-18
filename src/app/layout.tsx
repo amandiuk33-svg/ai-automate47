@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export async function metadata(): Promise<Metadata> {
   let config: any;
   try {
-    config = getContent();
+    config = await getContent();
   } catch {
     config = {
       site: {

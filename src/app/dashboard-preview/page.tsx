@@ -12,10 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-const config = getContent();
-const dashboard = config.dashboard;
-
-export default function DashboardPreview() {
+export default async function DashboardPreview() {
+  const config = await getContent();
   return (
     <div className="section-container">
       <div className="text-center mb-16">

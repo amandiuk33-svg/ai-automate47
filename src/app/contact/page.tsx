@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Contact() {
-  const config = getContent();
+export default async function Contact() {
+  const config = await getContent();
 
   return (
     <div className="section-container">

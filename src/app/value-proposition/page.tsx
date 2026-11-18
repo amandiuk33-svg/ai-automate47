@@ -12,10 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-const config = getContent();
-const valueProp = config.valueProp;
-
-export default function ValueProposition() {
+export default async function ValueProposition() {
+  const config = await getContent();
   return (
     <div className="section-container bg-space-950/50 rounded-2xl border border-white/10">
       <div className="text-center mb-16">

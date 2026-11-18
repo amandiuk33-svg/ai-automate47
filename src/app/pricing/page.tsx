@@ -13,10 +13,9 @@ export const metadata: Metadata = {
   },
 };
 
-const config = getContent();
-const pricing = config.pricing;
-
-export default function Pricing() {
+export default async function Pricing() {
+  const config = await getContent();
+  const pricing = config.pricing;
   return (
     <div className="section-container">
       <div className="text-center mb-16">

@@ -12,10 +12,9 @@ export const metadata: Metadata = {
   },
 };
 
-const config = getContent();
-const chatbot = config.chatbot;
-
-export default function ChatbotPage() {
+export default async function ChatbotPage() {
+  const config = await getContent();
+  const chatbot = config.chatbot;
   return (
     <div className="section-container">
       <div className="max-w-3xl mx-auto">
