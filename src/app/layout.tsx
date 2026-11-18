@@ -4,7 +4,7 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ChatbotWidget } from '@/components/ChatbotWidget';
-import { getContent } from '@/lib/content';
+import { getContent } from '@/lib/content-read';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 

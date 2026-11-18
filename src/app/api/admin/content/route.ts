@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { getContent, saveContent } from '@/lib/content';
+import { getContent } from '@/lib/content-read';
+import { saveContent } from '@/lib/content';
 
 function verifyAuth(request: Request): NextResponse | null {
   const authHeader = request.headers.get('authorization');

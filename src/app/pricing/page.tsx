@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { getContent } from '@/lib/content';
+import { getContent } from '@/lib/content-read';
 
 export const metadata: Metadata = {
   title: 'AI Consulting Pricing | Affordable AI Automation Plans',

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getContent } from '@/lib/content';
+import { getContent } from '@/lib/content-read';
 
 export const metadata: Metadata = {
   title: 'AI Chatbot | Ask About AI Automation & Consulting',
