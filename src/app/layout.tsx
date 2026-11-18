@@ -8,83 +8,85 @@ import { getContent } from '@/lib/content';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-let config: any;
-try {
-  config = getContent();
-} catch {
-  config = {
-    site: {
-      name: 'AiAutomate47',
-      tagline: 'Empowering small businesses with AI-powered automation.',
-      email: 'hello@aiautomate47.com',
-      phone: '(555) 123-4567',
-      location: 'US',
-      twitterUrl: 'https://twitter.com/aiautomate47',
-      linkedinUrl: 'https://linkedin.com/company/aiautomate47',
-      twitterHandle: '@aiautomate47',
-    },
-    meta: {
-      layout: {
-        title: 'AI Consultant for Small Business | AiAutomate47',
-        description: 'AI consultancy and automation for US small businesses.',
-        keywords: ['AI consultancy', 'AI consultant', 'AI automation small business'],
+export async function metadata(): Promise<Metadata> {
+  let config: any;
+  try {
+    config = getContent();
+  } catch {
+    config = {
+      site: {
+        name: 'AiAutomate47',
+        tagline: 'Empowering small businesses with AI-powered automation.',
+        email: 'hello@aiautomate47.com',
+        phone: '(555) 123-4567',
+        location: 'US',
+        twitterUrl: 'https://twitter.com/aiautomate47',
+        linkedinUrl: 'https://linkedin.com/company/aiautomate47',
+        twitterHandle: '@aiautomate47',
       },
+      meta: {
+        layout: {
+          title: 'AI Consultant for Small Business | AiAutomate47',
+          description: 'AI consultancy and automation for US small businesses.',
+          keywords: ['AI consultancy', 'AI consultant', 'AI automation small business'],
+        },
+      },
+    };
+  }
+
+  return {
+    title: {
+      template: '%s | AiAutomate47',
+      default: config.meta.layout.title,
+    },
+    description: config.meta.layout.description,
+    keywords: config.meta.layout.keywords,
+    authors: [{ name: config.site.name }],
+    creator: config.site.name,
+    publisher: config.site.name,
+    robots: 'index, follow',
+    openGraph: {
+      title: config.meta.layout.title,
+      description: config.meta.layout.description,
+      url: 'https://aiautomate47.com',
+      siteName: config.site.name,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/assets/logo.svg',
+          width: 64,
+          height: 64,
+          alt: `${config.site.name} Logo`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: config.meta.layout.title,
+      description: config.meta.layout.description,
+      images: ['/assets/logo.svg'],
+      creator: config.site.twitterHandle,
+    },
+    manifest: '/manifest.json',
+    themeColor: '#00FFEF',
+    icons: [
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        url: '/favicon.svg',
+      },
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/svg+xml',
+        url: '/assets/logo.svg',
+      },
+    ],
+    other: {
+      'google-site-verification': '_dQtoQYCuFZ1EzWe7a5-dNfkzNgLMYOaSH5EL4HZKsg',
     },
   };
 }
-
-export const metadata: Metadata = {
-  title: {
-    template: '%s | AiAutomate47',
-    default: config.meta.layout.title,
-  },
-  description: config.meta.layout.description,
-  keywords: config.meta.layout.keywords,
-  authors: [{ name: config.site.name }],
-  creator: config.site.name,
-  publisher: config.site.name,
-  robots: 'index, follow',
-  openGraph: {
-    title: config.meta.layout.title,
-    description: config.meta.layout.description,
-    url: 'https://aiautomate47.com',
-    siteName: config.site.name,
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: '/assets/logo.svg',
-        width: 64,
-        height: 64,
-        alt: `${config.site.name} Logo`,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: config.meta.layout.title,
-    description: config.meta.layout.description,
-    images: ['/assets/logo.svg'],
-    creator: config.site.twitterHandle,
-  },
-  manifest: '/manifest.json',
-  themeColor: '#00FFEF',
-  icons: [
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      url: '/favicon.svg',
-    },
-    {
-      rel: 'apple-touch-icon',
-      type: 'image/svg+xml',
-      url: '/assets/logo.svg',
-    },
-  ],
-  other: {
-    'google-site-verification': '_dQtoQYCuFZ1EzWe7a5-dNfkzNgLMYOaSH5EL4HZKsg',
-  },
-};
 
 export default function RootLayout({
   children,
