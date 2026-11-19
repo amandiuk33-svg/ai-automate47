@@ -92,7 +92,6 @@ export default function RootLayout({
           <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-neon-blue/10 rounded-full blur-[100px]" />
           {/* AI Circuit Lines */}
           <div className="ai-circuit-line" style={{ left: '0%', animationDelay: '0s' }} />
-          <div className="ai-circuit-line" style={{ left: '50%', animationDelay: '1s' }} />
           <div className="ai-circuit-line" style={{ right: '0%', animationDelay: '2s' }} />
           {/* Header */}
           <Header />

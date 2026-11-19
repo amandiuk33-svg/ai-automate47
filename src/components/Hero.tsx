@@ -15,7 +15,6 @@ export function Hero() {
 
       {/* AI Circuit lines */}
       <div className="ai-circuit-line" style={{ left: '0%', animationDelay: '0s' }} />
-      <div className="ai-circuit-line" style={{ left: '50%', animationDelay: '1s' }} />
       <div className="ai-circuit-line" style={{ right: '0%', animationDelay: '2s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between min-h-[60vh]">
