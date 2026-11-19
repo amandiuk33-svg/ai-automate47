@@ -1,11 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { getPostBySlug, getAllPostSlugs } from '@/lib/markdown';
-
-export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
+import { getPostBySlug } from '@/lib/markdown';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
