@@ -1,4 +1,4 @@
-import { getContent } from '@/lib/content';
+import { getContent } from '@/lib/content-read';
 
 export async function Footer() {
   const currentYear = new Date().getFullYear();
