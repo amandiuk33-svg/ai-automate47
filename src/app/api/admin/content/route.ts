@@ -3,7 +3,7 @@ import { getContent } from '@/lib/content-read';
 
 function verifyAuth(request: Request): NextResponse | null {
   const authHeader = request.headers.get('authorization');
-  const expectedPassword = process.env.ADMIN_PASSWORD;
+  const expectedPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
   if (!expectedPassword) {
     return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
