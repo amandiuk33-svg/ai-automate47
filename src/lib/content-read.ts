@@ -128,6 +128,6 @@ export interface SiteConfig {
   meta: Record<string, { title: string; description: string; keywords: string[] }>;
 }
 
-export async function getContent(): Promise<SiteConfig> {
+export function getContent(): SiteConfig {
   return siteConfig as SiteConfig;
 }
