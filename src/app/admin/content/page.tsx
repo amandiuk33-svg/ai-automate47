@@ -65,11 +65,7 @@ export default function AdminContent() {
 
   async function fetchContent() {
     try {
-      const res = await fetch('/api/admin/content', {
-        headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`,
-        },
-      });
+      const res = await fetch('/api/admin/content');
       if (!res.ok) throw new Error('Failed to fetch content');
       const data = await res.json();
       setContent(data);
@@ -89,7 +85,6 @@ export default function AdminContent() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`,
         },
         body: JSON.stringify(content),
       });
