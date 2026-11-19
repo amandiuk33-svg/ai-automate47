@@ -33,9 +33,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-function simpleMarkdownToHtml(markdown: string): JSX.Element {
+function simpleMarkdownToHtml(markdown: string) {
   const lines = markdown.split('\n');
-  const elements: JSX.Element[] = [];
+  const elements: any[] = [];
   let currentParagraph: string[] = [];
 
   const flushParagraph = () => {
@@ -82,7 +82,7 @@ function simpleMarkdownToHtml(markdown: string): JSX.Element {
   return <>{elements}</>;
 }
 
-function parseInlineMarkdown(text: string): JSX.Element {
+function parseInlineMarkdown(text: string) {
   const parts = text.split(/(\*\*.*?\*\*|\*.*?\*|`.*?`)/);
   return (
     <span>
