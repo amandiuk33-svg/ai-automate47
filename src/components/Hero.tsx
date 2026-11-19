@@ -1,7 +1,7 @@
 import { getContent } from '@/lib/content-read';
 
-export async function Hero() {
-  const config = await getContent();
+export function Hero() {
+  const config = getContent();
 
   const faqs = config.home.faqs;
 

@@ -1,8 +1,8 @@
 import { getContent } from '@/lib/content-read';
 
-export async function Footer() {
+export function Footer() {
   const currentYear = new Date().getFullYear();
-  const config = await getContent();
+  const config = getContent();
 
   return (
     <footer className="bg-space-950 border-t border-white/10 pt-16 pb-8">
