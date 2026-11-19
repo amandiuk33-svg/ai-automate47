@@ -88,35 +88,11 @@ export async function metadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  let config: any;
-  try {
-    config = await getContent();
-  } catch {
-    config = {
-      site: {
-        name: 'AiAutomate47',
-        tagline: 'Empowering small businesses with AI-powered automation.',
-        email: 'hello@aiautomate47.com',
-        phone: '(555) 123-4567',
-        location: 'US',
-        twitterUrl: 'https://twitter.com/aiautomate47',
-        linkedinUrl: 'https://linkedin.com/company/aiautomate47',
-        twitterHandle: '@aiautomate47',
-      },
-      meta: {
-        layout: {
-          title: 'AI Consultant for Small Business | AiAutomate47',
-          description: 'AI consultancy and automation for US small businesses.',
-          keywords: ['AI consultancy', 'AI consultant', 'AI automation small business'],
-        },
-      },
-    };
-  }
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} font-sans relative overflow-x-hidden`}>
