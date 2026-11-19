@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ChatbotWidget } from '@/components/ChatbotWidget';
 import { getContent } from '@/lib/content-read';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -374,10 +372,8 @@ export default function RootLayout({
           <div className="ai-data-stream" style={{ left: '85%', animationDelay: '1.5s', height: '130px' }} />
         </div>
 
-        <Header />
         <main className="relative z-10">{children}</main>
         <Footer />
-        <ChatbotWidget />
       </body>
     </html>
   );
