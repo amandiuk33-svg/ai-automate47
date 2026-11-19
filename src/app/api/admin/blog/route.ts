@@ -1,7 +1,30 @@
 import { NextResponse } from 'next/server';
 import { getAllPostSlugs, getPostBySlug, savePost, deletePost, BlogPost } from '@/lib/markdown';
 
+function verifyAuth(request: Request): NextResponse | null {
+  const authHeader = request.headers.get('authorization');
+  const expectedPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || process.env.ADMIN_PASSWORD;
+  
+  if (!expectedPassword) {
+    return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
+  }
+  
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  
+  const token = authHeader.substring(7);
+  if (token !== expectedPassword) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  
+  return null;
+}
+
 export async function GET(request: Request) {
+  const authError = verifyAuth(request);
+  if (authError) return authError;
+  
   try {
     const slugs = getAllPostSlugs();
     const posts = slugs
@@ -15,6 +38,9 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const authError = verifyAuth(request);
+  if (authError) return authError;
+  
   try {
     const body = await request.json();
     const { slug, title, content, excerpt, author, date, tags, image, isPublished } = body;
@@ -43,6 +69,9 @@ export async function POST(request: Request) {
 }
 
 export async function PUT(request: Request) {
+  const authError = verifyAuth(request);
+  if (authError) return authError;
+  
   try {
     const body = await request.json();
     const { slug, ...postData } = body;
@@ -59,6 +88,9 @@ export async function PUT(request: Request) {
 }
 
 export async function DELETE(request: Request) {
+  const authError = verifyAuth(request);
+  if (authError) return authError;
+  
   try {
     const { searchParams } = new URL(request.url);
     const slug = searchParams.get('slug');

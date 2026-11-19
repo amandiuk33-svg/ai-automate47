@@ -69,7 +69,11 @@ export default function AdminBlog() {
 
   async function fetchPosts() {
     try {
-      const res = await fetch('/api/admin/blog');
+      const res = await fetch('/api/admin/blog', {
+        headers: {
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`,
+        },
+      });
       if (!res.ok) throw new Error('Failed to fetch posts');
       const data = await res.json();
       setPosts(data);
@@ -120,6 +124,7 @@ export default function AdminBlog() {
         method,
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`,
         },
         body: JSON.stringify({
           ...formData,
@@ -141,6 +146,8 @@ export default function AdminBlog() {
       const res = await fetch(`/api/admin/blog?slug=${encodeURIComponent(slug)}`, {
         method: 'DELETE',
         headers: {
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_ADMIN_PASSWORD}`,
+        },
       });
       if (!res.ok) throw new Error('Failed to delete post');
       fetchPosts();

@@ -1,7 +1,30 @@
 import { NextResponse } from 'next/server';
 import { getContent } from '@/lib/content-read';
 
+function verifyAuth(request: Request): NextResponse | null {
+  const authHeader = request.headers.get('authorization');
+  const expectedPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || process.env.ADMIN_PASSWORD;
+
+  if (!expectedPassword) {
+    return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
+  }
+
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const token = authHeader.substring(7);
+  if (token !== expectedPassword) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  return null;
+}
+
 export async function GET(request: Request) {
+  const authError = verifyAuth(request);
+  if (authError) return authError;
+
   try {
     const content = await getContent();
     return NextResponse.json(content);
@@ -11,6 +34,9 @@ export async function GET(request: Request) {
 }
 
 export async function PUT(request: Request) {
+  const authError = verifyAuth(request);
+  if (authError) return authError;
+
   try {
     const body = await request.json();
     const fs = await import('fs');
