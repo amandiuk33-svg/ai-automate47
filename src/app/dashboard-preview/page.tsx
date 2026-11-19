@@ -17,8 +17,8 @@ export default async function DashboardPreview() {
   return (
     <div className="section-container">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{dashboard.title}</h1>
-        <p className="text-xl text-white/60 max-w-2xl mx-auto">{dashboard.subtitle}</p>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{config.dashboard.title}</h1>
+        <p className="text-xl text-white/60 max-w-2xl mx-auto">{config.dashboard.subtitle}</p>
       </div>
 
       {/* WebSite Schema */}
@@ -37,7 +37,7 @@ export default async function DashboardPreview() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-        {dashboard.widgets.map((widget) => (
+        {config.dashboard.widgets.map((widget) => (
           <div key={widget.title} className="glass-card p-6">
             <div className="flex justify-between items-start mb-4">
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-2xl ${
@@ -66,7 +66,7 @@ export default async function DashboardPreview() {
         <div className="glass-card p-6">
           <h3 className="text-xl font-display font-bold text-white mb-6">Recent Activity</h3>
           <div className="space-y-4">
-            {dashboard.recentActivity.map((activity, i) => (
+            {config.dashboard.recentActivity.map((activity, i) => (
               <div key={i} className="flex items-start space-x-3 py-3 border-b border-white/5 last:border-0">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${
                   activity.status === 'success' ? 'bg-neon-cyan/20 text-neon-cyan' : 'bg-neon-magenta/20 text-neon-magenta'
@@ -85,9 +85,9 @@ export default async function DashboardPreview() {
       </div>
 
       <div className="mt-16 text-center">
-        <p className="text-white/70 mb-6">{dashboard.ctaText}</p>
+        <p className="text-white/70 mb-6">{config.dashboard.ctaText}</p>
         <a href="/pricing" className="neon-button">
-          {dashboard.ctaLabel}
+          {config.dashboard.ctaLabel}
         </a>
       </div>
     </div>

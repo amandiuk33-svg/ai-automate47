@@ -17,8 +17,8 @@ export default async function ValueProposition() {
   return (
     <div className="section-container bg-space-950/50 rounded-2xl border border-white/10">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{valueProp.title}</h1>
-        <p className="text-xl text-white/60 max-w-2xl mx-auto">{valueProp.subtitle}</p>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">{config.valueProp.title}</h1>
+        <p className="text-xl text-white/60 max-w-2xl mx-auto">{config.valueProp.subtitle}</p>
       </div>
 
       {/* Organization Schema */}
@@ -34,7 +34,7 @@ export default async function ValueProposition() {
       </script>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {valueProp.benefits.map((benefit, i) => (
+        {config.valueProp.benefits.map((benefit, i) => (
           <div key={i} className="glass-card p-8 text-center hover:border-neon-cyan/50 transition-all duration-300 group">
             <div className="w-14 h-14 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 bg-white/5 border border-white/10 group-hover:bg-neon-cyan/20 transition-colors">
               {benefit.icon}
@@ -46,9 +46,9 @@ export default async function ValueProposition() {
       </div>
 
       <div className="mt-16 text-center">
-        <p className="text-white/70 text-lg mb-8">{valueProp.ctaText}</p>
+        <p className="text-white/70 text-lg mb-8">{config.valueProp.ctaText}</p>
         <a href="/pricing" className="neon-button px-8 py-4 text-lg">
-          {valueProp.ctaLabel}
+          {config.valueProp.ctaLabel}
         </a>
       </div>
     </div>
